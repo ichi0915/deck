@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/spinnaker/deck/compare/@spinnaker/core@0.17.0...@spinnaker/core@0.18.0) (2021-12-13)
+
+
+### Features
+
+* **core/pipeline:** Load quiet period configuration from Gate, not from SETTINGS ([#9788](https://github.com/spinnaker/deck/issues/9788)) ([75694bd](https://github.com/spinnaker/deck/commit/75694bdd55c9eaf3af8d9b531ee0ac4a471733c5))
+
+
+
+
+
 # [0.17.0](https://github.com/spinnaker/deck/compare/@spinnaker/core@0.16.1...@spinnaker/core@0.17.0) (2021-12-11)
 
 
