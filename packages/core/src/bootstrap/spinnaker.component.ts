@@ -1,9 +1,9 @@
-import type { IController } from 'angular';
+import type { IController, IScope } from 'angular';
 
 import { bootstrapModule } from './bootstrap.module';
 import type { IFeatures } from '../config/settings';
 import { SETTINGS } from '../config/settings';
-import type { IDeckRootScope } from '../domain';
+import { ReactInjector } from '../reactShims';
 
 const template = `
   <spinnaker-container authenticating="$ctrl.authenticating" routing="$ctrl.routing"></spinnaker-container>
@@ -13,11 +13,12 @@ class SpinnakerController implements IController {
   public authenticating: boolean;
   public feature: IFeatures;
   public routing: boolean;
-  public static $inject = ['$rootScope'];
-  constructor($rootScope: IDeckRootScope) {
+  public rootScope: IScope;
+  constructor() {
+    this.rootScope = ReactInjector.$rootScope;
     this.feature = SETTINGS.feature;
-    this.authenticating = $rootScope.authenticating;
-    this.routing = $rootScope.routing;
+    this.authenticating = this.rootScope.authenticating;
+    this.routing = this.rootScope.routing;
   }
 }
 
